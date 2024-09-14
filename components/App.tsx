@@ -42,6 +42,7 @@ import classNames from "classnames";
 import { useRouter as useNextRouter } from 'next/router';
 import templates from "@/templates/templates";
 import SettingsDialog from '@/components/components/SettingsDialog';
+import HtmlSaver from '../components/HtmlSaver';
 
 
 const CodeTab = dynamic(
@@ -656,6 +657,11 @@ ${error.stack}
                 });
               }}/>
             </div>
+          </div>
+          {/* 在适当的位置添加 HtmlSaver 组件 */}
+          <div className="mt-4">
+            <h2 className="text-xl font-bold mb-2">HTML 保存器</h2>
+            <HtmlSaver code={generatedCode} />
           </div>
       </main>
       <span className="hidden">
