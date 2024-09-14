@@ -1,0 +1,170 @@
+# 忽略所有 .log 文件
+*.log
+
+# 忽略 node_modules 目录
+node_modules/
+
+# 忽略所有 .tmp 文件
+*.tmp
+
+# 忽略 build 目录
+/build
+
+# 忽略 .DS_Store 文件（macOS 系统文件）
+.DS_Store
+
+# 忽略 .env 文件（通常包含敏感信息）
+.env
+
+# 忽略 IDE 配置文件
+.vscode/
+.idea/
+
+# 忽略编译生成的文件
+*.class
+*.o
+*.pyc
+
+# 忽略特定文件
+config.json
+
+# 通用
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# 编辑器和IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.gradle
+/build/
+/out/
+/target/
+
+# C/C++
+*.o
+*.ko
+*.obj
+*.elf
+*.ilk
+*.map
+*.exp
+*.gch
+*.pch
+
+# Ruby
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/test/tmp/
+/test/version_tmp/
+/tmp/
+
+# PHP
+/vendor/
+composer.phar
+/phpunit.xml
+
+# .NET
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.dbmdl
+*.dbproj.schemaview
+*.pfx
+*.publishsettings
+
+# 前端框架
+/dist
+/tmp
+/out-tsc
+/.angular/cache
+.sass-cache/
+
+# 数据库
+*.sqlite
+*.sqlite3
+
+# 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 包管理器
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# 环境文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 构建输出
+/build
+/dist
+/out
+
+# 其他
+*.bak
+*.swp
+*.swo
+*.log
+*.tmp
+*.temp
+.cache
+.project
+.settings
+.classpath
+.factorypath
+
+# 特定文件
+config.json
