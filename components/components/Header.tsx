@@ -1,5 +1,6 @@
 
 import { BsGithub } from "react-icons/bs";
+import { BsChatDotsFill } from "react-icons/bs";
 import SettingsDialog from './SettingsDialog';
 import {SettingContext} from '../contexts/SettingContext'
 import {useContext, useState} from 'react';
@@ -59,11 +60,11 @@ export default () => {
             </li> */}
             <li className="mx-2">
                 <a
-                  href="https://github.com/sparrow-js/ant-codeAI"
+                  href="https://www.flexai.cc/"
                   target="_blank"
                   className="hover:text-[#2752f4]"
                 >
-                  <BsGithub className="text-xl" />
+                  <BsChatDotsFill className="text-xl" />
                 </a>
             </li>
             {/* <li className="mx-2">

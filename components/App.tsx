@@ -379,7 +379,7 @@ ${error.stack}
     const form = document.createElement("form");
     form.setAttribute("method", "POST");
     form.setAttribute("action", "https://codepen.io/pen/define");
-    form.setAttribute("target", "_blank");
+    //form.setAttribute("target", "_blank");
     form.appendChild(input);
 
     document.body.appendChild(form);
