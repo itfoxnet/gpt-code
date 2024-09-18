@@ -379,8 +379,9 @@ ${error.stack}
 
     const form = document.createElement("form");
     form.setAttribute("method", "POST");
-    form.setAttribute("action", "https://codepen.io/pen/define");
-    //form.setAttribute("target", "_blank");
+    //form.setAttribute("action", "https://codepen.io/pen/define");
+    form.setAttribute("action", "http://localhost:3000/api/preview-code");
+    form.setAttribute("target", "_blank");
     form.appendChild(input);
 
     document.body.appendChild(form);
@@ -658,11 +659,7 @@ ${error.stack}
               }}/>
             </div>
           </div>
-          {/* 在适当的位置添加 HtmlSaver 组件 */}
-          <div className="mt-4">
-            <h2 className="text-xl font-bold mb-2">HTML 保存器</h2>
-            <HtmlSaver code={generatedCode} />
-          </div>
+
       </main>
       <span className="hidden">
         <SettingsDialog 

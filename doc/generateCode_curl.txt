@@ -1,0 +1,18 @@
+curl 'http://localhost:3000/api/generateCode' \
+  -H 'Accept: */*' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'DNT: 1' \
+  -H 'Origin: http://localhost:3000' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: http://localhost:3000/editor/create' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \
+  -H 'content-type: application/json' \
+  -H 'sec-ch-ua: "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  --data-raw '{"event":"generatecode","data":{"generationType":"create","text":"A list of product categories with image, name and description.","openAiApiKey":"sk-xxK7oWLi7ZRfJqaB754F777A9974389A5933d28AeDc2501","openAiBaseURL":"https://gpt.bemore.lol/v1","screenshotOneApiKey":null,"isImageGenerationEnabled":true,"editorTheme":"cobalt","generatedCodeConfig":"html_tailwind","isTermOfServiceAccepted":false,"accessCode":null,"mockAiResponse":false,"promptCode":"","init":true,"llm":"openai","geminiApiKey":"","anthropicApiKey":"","anthropicBaseURL":null,"slug":"create","template":{}}}'
