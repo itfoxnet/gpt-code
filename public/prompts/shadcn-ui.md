@@ -169,7 +169,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 <div className="w-[450px]">
   <AspectRatio ratio={16 / 9}>
     <img
-      src="https://www.ancodeai.com/placeholder.svg"
+      src="https://code.flexai.cc/placeholder.svg"
       alt="Image"
       className="rounded-md object-cover"
     />

@@ -61,7 +61,7 @@ export default function HistoryDisplay({
                 <div className="bg-[length:160px_100px] bg-no-repeat bg-center w-full h-[80px]" 
                   style={
                     {
-                      backgroundImage: `url(${item.screenshot || 'https://www.ancodeai.com/placeholder.svg'})`
+                      backgroundImage: `url(${item.screenshot || 'https://code.flexai.cc/placeholder.svg'})`
                     }
                   }></div>
                 <div className="flex absolute bottom-[6px] px-1 bg-blue-100 text-blue-600 border-blue-600 border rounded-sm">

@@ -212,7 +212,7 @@ const REACT_ANTD_MOCK_CODE = `
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Product Category 1 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="https://www.ancodeai.com/placeholder.svg" alt="Placeholder image for product category 1" class="w-full h-56 object-cover object-center">
+        <img src="https://code.flexai.cc/placeholder.svg" alt="Placeholder image for product category 1" class="w-full h-56 object-cover object-center">
         <div class="p-4">
           <h3 class="text-lg font-semibold text-gray-800">Category Name 1</h3>
           <p class="text-gray-600 mt-1">Description for product category 1. It should be brief and to the point, giving a clear idea of what this category is about.</p>
@@ -220,7 +220,7 @@ const REACT_ANTD_MOCK_CODE = `
       </div>
       <!-- Product Category 2 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="https://www.ancodeai.com/placeholder.svg" alt="Placeholder image for product category 2" class="w-full h-56 object-cover object-center">
+        <img src="https://code.flexai.cc/placeholder.svg" alt="Placeholder image for product category 2" class="w-full h-56 object-cover object-center">
         <div class="p-4">
           <h3 class="text-lg font-semibold text-gray-800">Category Name 2</h3>
           <p class="text-gray-600 mt-1">Description for product category 2. It should be brief and to the point, giving a clear idea of what this category is about.</p>
@@ -228,7 +228,7 @@ const REACT_ANTD_MOCK_CODE = `
       </div>
       <!-- Product Category 3 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="https://www.ancodeai.com/placeholder.svg" alt="Placeholder image for product category 3" class="w-full h-56 object-cover object-center">
+        <img src="https://code.flexai.cc/placeholder.svg" alt="Placeholder image for product category 3" class="w-full h-56 object-cover object-center">
         <div class="p-4">
           <h3 class="text-lg font-semibold text-gray-800">Category Name 3</h3>
           <p class="text-gray-600 mt-1">Description for product category 3. It should be brief and to the point, giving a clear idea of what this category is about.</p>
@@ -236,7 +236,7 @@ const REACT_ANTD_MOCK_CODE = `
       </div>
       <!-- Product Category 4 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="https://www.ancodeai.com/placeholder.svg" alt="Placeholder image for product category 4" class="w-full h-56 object-cover object-center">
+        <img src="https://code.flexai.cc/placeholder.svg" alt="Placeholder image for product category 4" class="w-full h-56 object-cover object-center">
         <div class="p-4">
           <h3 class="text-lg font-semibold text-gray-800">Category Name 4</h3>
           <p class="text-gray-600 mt-1">Description for product category 4. It should be brief and to the point, giving a clear idea of what this category is about.</p>
@@ -244,7 +244,7 @@ const REACT_ANTD_MOCK_CODE = `
       </div>
       <!-- Product Category 5 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="https://www.ancodeai.com/placeholder.svg" alt="Placeholder image for product category 5" class="w-full h-56 object-cover object-center">
+        <img src="https://code.flexai.cc/placeholder.svg" alt="Placeholder image for product category 5" class="w-full h-56 object-cover object-center">
         <div class="p-4">
           <h3 class="text-lg font-semibold text-gray-800">Category Name 5</h3>
           <p class="text-gray-600 mt-1">Description for product category 5. It should be brief and to the point, giving a clear idea of what this category is about.</p>
@@ -252,7 +252,7 @@ const REACT_ANTD_MOCK_CODE = `
       </div>
       <!-- Product Category 6 -->
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <img src="https://www.ancodeai.com/placeholder.svg" alt="Placeholder image for product category 6" class="w-full h-56 object-cover object-center">
+        <img src="https://code.flexai.cc/placeholder.svg" alt="Placeholder image for product category 6" class="w-full h-56 object-cover object-center">
         <div class="p-4">
           <h3 class="text-lg font-semibold text-gray-800">Category Name 6</h3>
           <p class="text-gray-600 mt-1">Description for product category 6. It should be brief and to the point, giving a clear idea of what this category is about.</p>

@@ -19,7 +19,7 @@ https://github.com/sparrow-js/ant-codeAI/assets/59440091/afd51668-3d48-4ef9-bf5d
 
 
 ## 🚀 试用
-> [线上地址](https://www.ancodeai.com/)
+> [线上地址](https://code.flexai.cc/)
 
 
 可以下载下来本地运行.

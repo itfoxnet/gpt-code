@@ -11,7 +11,7 @@ export default function Document() {
       <meta property="og:type" content="website" />
       <meta property="og:title" content="ancodeai - AI-Powered Website Code Creation" />
       <meta property="og:description" content="Streamline web design with www.ancodeai.com: Convert ideas and images to HTML code instantly using AI, with Tailwind, React, and Vue support." />
-      <meta property="og:url" content="https://www.ancodeai.com/" />
+      <meta property="og:url" content="https://code.flexai.cc/" />
       <meta property="og:site_name" content="ancodeai" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="ancodeai - AI-Powered Website Code Creation" />

@@ -112,7 +112,7 @@ export default function TemplatetProvider({ children }: { children: ReactNode })
 
     function addTemplate (template: TemplateType) {
         if (!template.imageUrl) {
-            template.imageUrl = 'https://www.ancodeai.com/placeholder.svg'
+            template.imageUrl = 'https://code.flexai.cc/placeholder.svg'
         }
      
         setTemplateList((prevState) => {
