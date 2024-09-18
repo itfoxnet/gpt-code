@@ -168,3 +168,5 @@ yarn.lock
 
 # 特定文件
 config.json
+saved_html/
+public/previews/
