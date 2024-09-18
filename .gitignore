@@ -170,3 +170,4 @@ yarn.lock
 config.json
 saved_html/
 public/previews/
+public/upload-pic/
