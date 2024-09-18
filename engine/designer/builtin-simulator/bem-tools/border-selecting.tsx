@@ -15,6 +15,8 @@ import { OffsetObserver } from '../../designer';
 import { Node } from '../../document';
 import { getNearPath } from '../../../utils';
 import { editDeleteNode } from '../../document/api';
+import { useState } from 'react';
+import ImageUploadModal from './ImageUploadModal'; // 假设我们创建了这个新组件
 
 @observer
 export class BorderSelectingInstance extends Component<{
@@ -52,6 +54,10 @@ export class BorderSelectingInstance extends Component<{
 
 @observer 
 class SendBox extends Component<{ observed: OffsetObserver }> {
+  state = {
+    isModalOpen: false,
+  };
+
   get editor () {
     return globalContext.get('editor');
   }
@@ -74,6 +80,24 @@ class SendBox extends Component<{ observed: OffsetObserver }> {
       this.editor.get('designer').currentSelection.clear();
     }
   }
+
+  openImageUploadModal = () => {
+    this.setState({ isModalOpen: true });
+  };
+
+  closeImageUploadModal = () => {
+    this.setState({ isModalOpen: false });
+  };
+
+  handleImageUpload = (imageUrl: string) => {
+    const currentMessage = this.editor.get('designer').currentSelection.sendMessage || '';
+    // 直接使用返回的完整URL
+    const newMessage = `${currentMessage}\n替换图片地址为：${imageUrl}`;
+    this.editor.get('designer').currentSelection.sendMessage = newMessage;
+    this.closeImageUploadModal();
+    // 如果需要，这里可以触发一个重新渲染
+    this.forceUpdate();
+  };
 
   render() {
     const { observed } = this.props;
@@ -113,12 +137,24 @@ class SendBox extends Component<{ observed: OffsetObserver }> {
                 // })
             }} 
             className="lc-borders-send-textarea text-xs w-full resize-none border-none outline-none" spellCheck="false" placeholder="Make the text larger or change the colors of this element." required></textarea>
-          <div className='flex justify-end'>
+          <div className='flex justify-between items-center mt-2'>
+            <button 
+              onClick={this.openImageUploadModal} 
+              className="lc-borders-upload-button text-xs bg-blue-500 text-white px-2 py-1 rounded"
+            >
+              上传图片
+            </button>
             <button onClick={this.sendMessageChange} className="lc-borders-send-button">
               update
             </button>
           </div>
         </div>
+        {this.state.isModalOpen && (
+          <ImageUploadModal 
+            onClose={this.closeImageUploadModal}
+            onUpload={this.handleImageUpload}
+          />
+        )}
       </div>
     )
   }

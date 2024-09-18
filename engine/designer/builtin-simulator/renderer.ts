@@ -30,42 +30,34 @@ export function isSimulatorRenderer(obj: any): obj is BuiltinSimulatorRenderer {
 }
 
 export class SimulatorRendererContainer implements BuiltinSimulatorRenderer {
-  isSimulatorRenderer: true;
+  readonly isSimulatorRenderer = true; // 使用 readonly 来确保这个属性不会被修改
   private disposeFunctions: Array<() => void> = [];
   @obx.ref private _documentInstances: any[] = [];
-  get documentInstances() {
-    return this._documentInstances;
-  }
-  private host: BuiltinSimulatorHost;
+  private host: BuiltinSimulatorHost | null = null;
 
   constructor() {
     makeObservable(this);
-    this.host = (window as any).LCSimulatorHost;
-
-    this.disposeFunctions.push(this.host.connect(this, () => {
-      // sync layout config
-      // this._layout = host.project.get('config').layout;
-
-      // // todo: split with others, not all should recompute
-      // if (this._libraryMap !== host.libraryMap || this._componentsMap !== host.designer.componentsMap) {
-      //   this._libraryMap = host.libraryMap || {};
-      //   this._componentsMap = host.designer.componentsMap;
-      //   this.buildComponents();
-      // }
-
-      // // sync designMode
-      // this._designMode = host.designMode;
-
-      // this._locale = host.locale;
-
-      // // sync requestHandlersMap
-      // this._requestHandlersMap = host.requestHandlersMap;
-
-      // // sync device
-      // this._device = host.device;
-    }));
+    this.initializeHost();
   }
 
+  private async initializeHost() {
+    // 等待 LCSimulatorHost 被设置
+    while (!(window as any).LCSimulatorHost) {
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
+    this.host = (window as any).LCSimulatorHost;
+    this.setupHostConnection();
+  }
+
+  private setupHostConnection() {
+    if (this.host && typeof this.host.connect === 'function') {
+      this.disposeFunctions.push(this.host.connect(this, () => {
+        // 原有的回调逻辑
+      }));
+    } else {
+      console.error('LCSimulatorHost is not properly initialized');
+    }
+  }
 
   createComponent(schema: NodeSchema): Component | null {
     throw new Error('Method not implemented.');
@@ -121,13 +113,26 @@ export class SimulatorRendererContainer implements BuiltinSimulatorRenderer {
     return this._components;
   }
 
+  // 添加一个 getter 方法来访问 _documentInstances
+  get documentInstances(): any[] {
+    return this._documentInstances;
+  }
+
+  // 修改 dispose 方法
   dispose() {
     this.disposeFunctions.forEach(fn => fn());
-    this.documentInstances.forEach(docInst => docInst.dispose());
+    if (this._documentInstances) {
+      this._documentInstances.forEach(docInst => {
+        if (docInst && typeof docInst.dispose === 'function') {
+          docInst.dispose();
+        }
+      });
+    }
     untracked(() => {
       this._componentsMap = {};
       this._components = null;
       this._appContext = null;
+      this._documentInstances = []; // 清空文档实例
     });
   }
 }

@@ -380,7 +380,7 @@ ${error.stack}
     const form = document.createElement("form");
     form.setAttribute("method", "POST");
     //form.setAttribute("action", "https://codepen.io/pen/define");
-    form.setAttribute("action", "http://localhost:3000/api/preview-code");
+    form.setAttribute("action", "/api/preview-code");
     form.setAttribute("target", "_blank");
     form.appendChild(input);
 
