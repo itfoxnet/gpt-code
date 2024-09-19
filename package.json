@@ -40,6 +40,7 @@
     "classnames": "^2.3.2",
     "clsx": "^2.0.0",
     "copy-to-clipboard": "^3.3.3",
+    "dotenv": "^16.4.5",
     "formidable": "^3.5.1",
     "html2canvas": "^1.4.1",
     "intl-messageformat": "^10.5.8",

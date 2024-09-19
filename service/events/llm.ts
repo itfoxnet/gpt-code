@@ -138,6 +138,10 @@ export async function streamingOpenAIResponses(
     anthropicBaseURL: any
   }
 ) {
+  console.log("Initial messages:", JSON.stringify(messages, null, 2));
+  console.log("Params:");
+  console.dir(params, { depth: null });
+
   if (params.llm === "gemini") {
     const full_response = await useGeminiResponse([messages, callback, params]);
     return full_response;
@@ -194,11 +198,15 @@ export async function streamingOpenAIResponses(
   }
 
 
-
+  /*
   if (!params.openAiApiKey) {
     callback('No openai key, set it', 'error');
     return '';
-  }
+  }*/
+
+  params.openAiApiKey = process.env['OPENAI_API_KEY'];
+  params.openAiBaseURL = process.env['OPENAI_BASE_URL'];
+  console.log("OpenAI params:", JSON.stringify(params, null, 2));
   const openai = new OpenAI({
     apiKey: params.openAiApiKey || process.env['OPENAI_API_KEY'], // defaults to process.env["OPENAI_API_KEY"]
     baseURL:
@@ -206,9 +214,9 @@ export async function streamingOpenAIResponses(
       process.env['OPENAI_BASE_URL'] ||
       'https://api.openai.com/v1',
   });
-
+  //model: 'gpt-4o-2024-05-13',
   const stream = await openai.chat.completions.create({
-    model: 'gpt-4o-2024-05-13',
+    model: 'gpt-4o-all',
     temperature: 0,
     max_tokens: 4096,
     messages,
@@ -220,6 +228,7 @@ export async function streamingOpenAIResponses(
     full_response += content;
     callback(content);
   }
-
+  console.log("Submitted Prompt:", messages);
+  console.log("Model Response:", full_response);
   return full_response;
 }

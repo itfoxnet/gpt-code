@@ -38,6 +38,8 @@ output:
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
 `;
 
 
@@ -64,6 +66,8 @@ In terms of libraries,
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
 `;
 
 
@@ -95,6 +99,8 @@ In terms of libraries,
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
 `;
 
 
@@ -130,6 +136,8 @@ In terms of libraries,
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
 `;
 
 
@@ -166,6 +174,8 @@ In terms of libraries,
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
 `;
 
 const VUE_TAILWIND_SYSTEM_PROMPT = `
@@ -296,6 +306,7 @@ You take detailed description of a reference web page from the user, and then bu
 using Tailwind, HTML and JS.
 
 - Make sure the app looks exactly like the detailed description.
+- Focus on the user's brief keywords in the description to generate the code accordingly.
 - Pay close attention to background color, text color, font size, font family, 
 padding, margin, border, etc. Match the colors and sizes exactly.
 - Do not add comments in the code such as "<!-- Add other navigation links as needed -->" and "<!-- ... other news items ... -->" in place of writing the full code. WRITE THE FULL CODE.
@@ -327,8 +338,31 @@ output:
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
-`;
+Directly return the complete code without asking the user for more details.
 
+`;
+const TAILWIND_SYSTEM_PROMPT_TEXT_New = `
+You are an expert Tailwind developer.
+You build single-page apps using Tailwind, HTML, and JS based on the user's input. The user's input may be brief keywords or detailed descriptions.
+
+- Focus on the user's brief keywords in the description to generate the code accordingly.
+- If the user provides minimal information, use your creativity and best judgment to create a website that aligns with the keywords provided.
+- Ensure the app reflects the user's input, even if it's brief.
+- Pay close attention to background color, text color, font size, font family, padding, margin, border, etc., if specified.
+- Do not add placeholder comments in the code; write the full code.
+- Repeat elements as needed to match the description.
+- For images, use placeholder images from /placeholder.svg and include a detailed description in the alt text so that an image generation AI can generate the image later.
+
+In terms of libraries:
+
+- Use this script to include Tailwind: <script src="https://cdn.tailwindcss.com"></script>
+- You can use Google Fonts.
+- Font Awesome for icons: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+
+Return only the full code in "<html></html>" tags.
+Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+Directly return the complete code without asking the user for more details.
+`;
 const BOOTSTRAP_SYSTEM_PROMPT_TEXT = `
 You are an expert Bootstrap developer
 You take detailed description of a reference web page from the user, and then build single page apps 
@@ -350,6 +384,9 @@ In terms of libraries,
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
+
 `;
 
 const REACT_TAILWIND_SYSTEM_PROMPT_TEXT = `
@@ -378,6 +415,8 @@ In terms of libraries,
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+
 `;
 
 const IONIC_TAILWIND_SYSTEM_PROMPT_TEXT = `
@@ -410,6 +449,8 @@ In terms of libraries,
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
 `;
 
 const REACT_ANTD_SYSTEM_PROMPT_TEXT = `
@@ -442,6 +483,8 @@ In terms of libraries,
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
 `;
 
 const VUE_TAILWIND_SYSTEM_PROMPT_TEXT = `
@@ -486,6 +529,8 @@ In terms of libraries,
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
 The return result must only include the code.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
 `;
 
 const VUE_ELEMENT_SYSTEM_PROMPT_TEXT = `
@@ -558,6 +603,8 @@ padding, margin, border, etc. Match the colors and sizes exactly.
 Return only the full code.
 Do not include markdown "\`\`\`" or "\`\`\`jsx" at the start or end.
 The return result must only include the code.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
 `;
 
 
@@ -592,6 +639,9 @@ output:
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
+
 `;
 
 
@@ -631,6 +681,9 @@ output:
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
+
 `
 
 const IMPORTED_CODE_BOOTSTRAP_SYSTEM_PROMPT = `
@@ -665,6 +718,9 @@ output:
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
+
 `
 
 const IMPORTED_CODE_IONIC_TAILWIND_SYSTEM_PROMPT = `
@@ -708,6 +764,9 @@ output:
 
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
+
 `;
 
 const IMPORTED_CODE_VUE_TAILWIND_SYSTEM_PROMPT = `
@@ -758,6 +817,9 @@ output:
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
 The return result must only include the code.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
+
 `;
 
 
@@ -825,6 +887,9 @@ output:
 Return only the full code in <html></html> tags.
 Do not include markdown "\`\`\`" or "\`\`\`html" at the start or end.
 The return result must only include the code.
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
+
 `;
 
 const IMPORTED_CODE_SVG_SYSTEM_PROMPT = `
@@ -837,12 +902,13 @@ You are an expert at building SVGs.
 
 Return only the full code in <svg></svg> tags.
 Do not include markdown "\`\`\`" or "\`\`\`svg" at the start or end.
-`
+If the user does not provide HTML-related information, randomly generate HTML and CSS code for a personal website that adapts to both PC and mobile devices, following mainstream design styles.
+Directly return the complete code without asking the user for more details.
 
-const USER_PROMPT = `
-Generate code for a app that looks exactly like this.
-{promptCode}
-`;
+`
+console.log("promptCode:{promptCode}")
+
+
 
 const SYSTEM_MAP = {
   html_tailwind: TAILWIND_SYSTEM_PROMPT,
@@ -904,15 +970,21 @@ export async function assemblePrompt(
         systemConent = systemPrompt;
       }
   }
+  const USER_PROMPT = promptCode
+  ? `Generate code for a app that looks exactly like this.\n${promptCode}`
+  : '';
 
+  console.log("USER_PROMPT:", USER_PROMPT)
 
-
-  let userContent: any[] = [
-    {
+  let userContent: any[] = [];
+  
+  if (USER_PROMPT) {
+    userContent.push({
       type: 'text',
-      text: USER_PROMPT.replace('{promptCode}', promptCode),
-    },
-  ];
+      text: USER_PROMPT,
+    });
+  }
+
   if (slug && slug !== 'create') {
     userContent = [
       {
@@ -920,7 +992,6 @@ export async function assemblePrompt(
         text:  `Here is the code of the app: ${initTemplateCode}`,
       },
     ];
-    // "Here is the code of the app: " + code
   }
 
   if (image_data_url) {
